@@ -1,0 +1,16 @@
+node_modules
+.idea
+
+dist
+
+.env
+
+TODO
+
+tmp
+
+.DS_Store
+
+docker/
+
+uploads/

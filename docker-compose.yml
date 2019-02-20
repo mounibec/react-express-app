@@ -1,0 +1,26 @@
+version: '3'
+services:
+  db:
+    image: mysql:5
+    expose:
+      - 3306
+    ports:
+      - 3307:3306
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=d4REn0LdCH4B
+      - MYSQL_DATABASE=db_dev
+  app:
+    build: .
+    ports:
+      - 3030:3030
+    environment:
+      - NODE_ENV=production
+      - DB_PASSWORD=d4REn0LdCH4B
+      - DB_USERNAME=root
+      - DB_HOSTNAME=db
+      - DB_NAME=db_dev
+      - DB_PORT=3306
+      - PORT=3030
+    depends_on:
+      - db
