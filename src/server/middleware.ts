@@ -54,7 +54,7 @@ export default class Middleware {
           ].join(' ');
         },
         {
-          stream: LOGGER.getLogger().stream
+          stream: LOGGER.stream
         }
       ));
   }
@@ -72,7 +72,7 @@ export default class Middleware {
         return res.status(403).send(err.message);
       }
 
-      LOGGER.getLogger().error(err.stack || err.toString(), {hostname: Middleware.getHostname(req)});
+      LOGGER.error(err.stack || err.toString(), {hostname: Middleware.getHostname(req)});
       res.status(500).send('Oops! An error has occurred. Please contact the service Admin.');
     });
 
