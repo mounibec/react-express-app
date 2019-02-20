@@ -4,10 +4,8 @@
   "description": "",
   "scripts": {
     "start": "NODE_ENV=production node ./dist/src/server",
-    "start:dev": "NODE_ENV=development nodemon $NODE_DEBUG_OPTION --watch src/server ./src/server",
+    "dev": "NODE_ENV=development $NODE_DEBUG_OPTION npx nodemon",
     "build": "NODE_ENV=production tsc && webpack -p --config ./webpack/webpack.production.config.js",
-    "build:dev": "NODE_ENV=development tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
     "test": "jest",
     "testWithCoverage": "jest --coverage"
   },
